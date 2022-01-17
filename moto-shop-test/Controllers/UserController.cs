@@ -20,7 +20,7 @@ namespace moto_shop_test.Controllers
         }
 
         [HttpPost("user-register")]
-        public IActionResult RegisterUser([FromBody] RegisterDTO registerDTO)
+        public IActionResult RegisterUser(RegisterDTO registerDTO)
         {
             try
             {
@@ -35,7 +35,7 @@ namespace moto_shop_test.Controllers
         }
 
         [HttpPost("user-login")]
-        public IActionResult LoginUser([FromBody] LoginDTO loginDTO)
+        public IActionResult LoginUser(LoginDTO loginDTO)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace moto_shop_test.Controllers
                     {
                         HttpOnly = true
                     });
-                    return Ok("Login success");
+                    return Ok("Login success. jwt token: " + jwt);
                 }
                 return BadRequest("Your account name or password is incorrect.");
             }

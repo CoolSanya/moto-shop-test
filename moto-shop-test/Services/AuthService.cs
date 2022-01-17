@@ -1,7 +1,6 @@
 ﻿using moto_shop_test.DAL;
 using moto_shop_test.DTO.AuthDTO;
 using moto_shop_test.Models;
-using moto_shop_test.Models.ViewModels;
 
 namespace moto_shop_test.Services
 {
@@ -38,14 +37,12 @@ namespace moto_shop_test.Services
         }
         public User CheckPassword(string email, string password)
         {
-            var tmpEmail = email;
-            var tmpPass = password;
             var user = _db.Users.SingleOrDefault(u => u.Email == email);
             if (user == null)
             {
                 throw new Exception("Invalid email. User not found");
             }
-            if (BCrypt.Net.BCrypt.Verify(password, user.Password))
+            if (password==user.Password)
             {
                 return user;
             }

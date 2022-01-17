@@ -12,6 +12,7 @@ namespace moto_shop_test.DAL
 
         public virtual DbSet<WeatherForecast> WeatherForecasts { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
 
     }
 }
