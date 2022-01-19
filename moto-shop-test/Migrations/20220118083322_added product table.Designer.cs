@@ -12,8 +12,8 @@ using moto_shop_test.DAL;
 namespace moto_shop_test.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220117173741_added product")]
-    partial class addedproduct
+    [Migration("20220118083322_added product table")]
+    partial class addedproducttable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

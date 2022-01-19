@@ -31,6 +31,20 @@ namespace moto_shop_test.Controllers
             }
         }
 
+        [HttpGet("get-info-product/{id}")]
+        public IActionResult GetInfoProduct(int id)
+        {
+            try
+            {
+                var product = _productService.GetInfoProduct(id);
+                return Ok($"Product info: /n" + product);
+            }
+            catch (Exception)
+            {
+                return NotFound("List is empty");
+            }
+        }
+
         [HttpPost("add-product")]
         public IActionResult AddProduct(ProductDTO productDTO)
         {
